@@ -40,4 +40,28 @@ const playerDetailsTwo = new PlayerDetails(
   "Belgium"
 );
 
-console.log(playerDetailsOne, playerDetailsTwo);
+// console.log(playerDetailsOne, playerDetailsTwo);
+
+// ------------------------ Object / Class Inheritance ----------------------------------
+class Parent {
+  constructor() {
+    this.fatherName = "Schwerznegger";
+  }
+}
+
+class Child extends Parent {
+  constructor(name, age) {
+    super();
+    this.name = name;
+    this.age = age;
+  }
+
+  getFullName() {
+    return `${this.name} ${this.fatherName}`;
+  }
+}
+
+const firstMan = new Child("Arnold", 73);
+const secondMan = new Child("Tom", 33);
+
+console.log(firstMan.getFullName() + "\n" + secondMan.getFullName());
